@@ -1,0 +1,26 @@
+﻿@model Customer
+@{
+    ViewBag.Title = "Customer Sign-Up";
+}
+
+<!DOCTYPE html>
+<html>
+<h1>Create Account</h1>
+<body>
+@* This is the entry form *@
+<div>
+    <form asp-action="Output">
+        <label>Name:</label>
+        <input asp-for="Name" type="text" />
+        <br />
+        <label>Username:</label>
+        <input asp-for="Username" type="text" />
+        <br />
+        <label>Password:</label>
+        <input asp-for="Password" type="text" />
+        <br />
+        <button type="submit">Submit</button>
+    </form>
+</div>
+</body>
+</html>
