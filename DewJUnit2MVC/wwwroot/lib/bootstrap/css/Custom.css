@@ -1,0 +1,15 @@
+﻿﻿.Name {
+    padding-right: 100px;
+}
+
+.Username {
+    padding-right: 100px;
+}
+
+.Password {
+    padding-right: 100px;
+}
+
+table, td {
+    border: solid;
+}
