@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
+// the CustContext class contains the initial entries for the database
 namespace DewJUnit2MVC.Models
 {
     public class CustContext: DbContext

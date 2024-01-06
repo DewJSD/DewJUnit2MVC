@@ -1,15 +1,10 @@
-﻿﻿.Name {
-    padding-right: 100px;
-}
-
-.Username {
-    padding-right: 100px;
-}
-
-.Password {
-    padding-right: 100px;
+﻿html {
+    font-size: 36px;
+    color: darkred;
+    background-color: gray;
 }
 
 table, td {
     border: solid;
+    border-color: green;
 }

@@ -1,5 +1,39 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model Customer
 @{
+    ViewBag.Title = ViewBag.Action + " Account"; @* dynamically change the title to use add or edit *@
 }
+@* this page serves double duty as both the add and edit forms*@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>@ViewBag.Title</title>
+    </head>
+    <body>
+    <h1>@ViewBag.Title</h1>
+    @* entry form for adding or editing *@
+    <form asp-action="Edit" method="post">
+        <div asp-validation-summary="All" class="text-danger"></div>
+
+        <div class="form-group">
+            <label asp-for="Name">Name</label>
+            <input asp-for="Name" class="form-control" />
+        </div>
+        <br />
+        <div class="form-group">
+            <lable asp-for="Username">Username</lable>
+            <input asp-for="Username" class="form-control" />
+        </div>
+        <br />
+        <div class="form-group">
+            <label asp-for="Password">Password</label>
+            <input asp-for="Password" class="form-control" />
+        </div>
+
+        <input type="hidden" asp-for="CustID" />
+
+        @* submission button and return to index link *@
+        <button type="submit" class="btn btn-primary">@ViewBag.Action</button>
+        <a asp-controller="Home" asp-action="Index" class="btn btn-primary">Go Back</a>
+    </form>
+    </body>
+</html>

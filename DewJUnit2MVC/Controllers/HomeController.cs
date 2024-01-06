@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 
+// the Home controller passes the database contents to the index page.
+
 namespace DewJUnit2MVC.Controllers
 {
     public class HomeController : Controller

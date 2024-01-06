@@ -2,7 +2,7 @@
 using System.Text;
 
 namespace DewJUnit2MVC.Models
-{
+{ // the customer class defines the customer model
     public class Customer
     {
         [Key]

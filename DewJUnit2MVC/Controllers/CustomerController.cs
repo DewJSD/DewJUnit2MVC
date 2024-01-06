@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using DewJUnit2MVC.Models;
 
+// The customer controller gets info from the CustContext class, and controls the add/edit and delete pages.
 namespace DewJUnit2MVC.Controllers
 {
     public class CustomerController : Controller
@@ -23,8 +24,8 @@ namespace DewJUnit2MVC.Controllers
         public IActionResult Edit(int id)
         {
             ViewBag.Action = "Edit";
-            var comic = context.Customers.Find(id);
-            return View();
+            var customer = context.Customers.Find(id);
+            return View(customer);
         }
 
         [HttpPost]
@@ -50,8 +51,8 @@ namespace DewJUnit2MVC.Controllers
         [HttpGet]
         public IActionResult Delete(int id)
         {
-            var comic = context.Customers.Find(id);
-            return View();
+            var customer = context.Customers.Find(id);
+            return View(customer);
         }
         [HttpPost]
         public IActionResult Delete(Customer customer)
