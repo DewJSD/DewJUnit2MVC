@@ -1,26 +1,38 @@
-﻿@model Customer
+﻿@model List<Customer>
 @{
-    ViewBag.Title = "Customer Sign-Up";
+    ViewBag.Title = "Customer Database";
 }
 
 <!DOCTYPE html>
 <html>
-<h1>Create Account</h1>
+<h1>Customer Database</h1>
 <body>
-@* This is the entry form *@
-<div>
-    <form asp-action="Output">
-        <label>Name:</label>
-        <input asp-for="Name" type="text" />
-        <br />
-        <label>Username:</label>
-        <input asp-for="Username" type="text" />
-        <br />
-        <label>Password:</label>
-        <input asp-for="Password" type="text" />
-        <br />
-        <button type="submit">Submit</button>
-    </form>
-</div>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Username</th>
+                <th>Password</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var customer in Model)
+            {
+                <tr>
+                    <td>@customer.Name</td>
+                    <td>@customer.Username</td>
+                    <td>@customer.Password</td>
+                    <td>
+                        <a asp-controller="Customer" asp-action="Edit"
+                           asp-route-id="@customer.CustID">Edit</a>
+                        <a asp-controller="Customer" asp-action="Delete"
+                           asp-route-id="@customer.CustID">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <br />
+    <a asp-controller="Customer" asp-action="Add">Sign Up</a>
 </body>
 </html>

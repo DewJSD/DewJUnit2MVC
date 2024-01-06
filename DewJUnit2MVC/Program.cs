@@ -1,7 +1,11 @@
+using Microsoft.EntityFrameworkCore;
+using DewJUnit2MVC.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<CustContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("CustContext")));
 
 var app = builder.Build();
 
